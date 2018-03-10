@@ -1,13 +1,17 @@
 .root {
   display: flex;
   height: 100vh;
-  font-size: 20px;
   justify-content: center;
   align-items: center;
 }
 
+.name {
+  font-size: 25px;
+  transition: color 1s ease-in-out;
+  color: black;
+}
+
 .name:hover {
   cursor: default;
-  transition: color 1s ease-in-out;
   color: LightSlateGray;
 }
