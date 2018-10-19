@@ -33,6 +33,7 @@ jobs:
 
     steps:
       - checkout
+      - run: yarn
       - run:
           name: Deploy
           command: yarn deploy
