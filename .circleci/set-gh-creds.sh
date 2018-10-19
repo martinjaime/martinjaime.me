@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git config user.name $GITHUB_NAME
-git config user.email $GITHUB_EMAIL
+git config --global user.name $GITHUB_NAME
+git config --global user.email $GITHUB_EMAIL
