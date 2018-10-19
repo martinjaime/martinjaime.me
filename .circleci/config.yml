@@ -33,6 +33,7 @@ jobs:
 
     steps:
       - checkout
+      - run: git config user.name $GITHUB_NAME user.email $GITHUB_EMAIL
       - run: yarn
       - run:
           name: Deploy
