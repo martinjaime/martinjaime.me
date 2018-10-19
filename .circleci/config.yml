@@ -26,6 +26,18 @@ jobs:
       # run tests!
       - run: yarn test
 
+  deploy:
+    docker:
+      - image: circleci/node:8.9.0
+    working_directory: ~/martinjai.me
+
+    steps:
+      - checkout
+      - run:
+          name: Deploy
+          command: yarn deploy
+
+
 workflows:
   version: 2
   build-and-deploy:
