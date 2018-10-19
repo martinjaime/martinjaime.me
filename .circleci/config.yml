@@ -33,7 +33,9 @@ jobs:
 
     steps:
       - checkout
-      - run: git config user.name $GITHUB_NAME user.email $GITHUB_EMAIL
+      - run:
+          name: Set up github credentials
+          command: bash ./.circleci/set-gh-creds.sh
       - run: yarn
       - run:
           name: Deploy
