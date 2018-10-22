@@ -16,9 +16,18 @@
 .buttons {
   transition: top 500ms ease-in-out, opacity 500ms ease-in-out;
   position: relative;
+  display: flex;
+  width: 90px;
+  justify-content: space-between;
   top: 0;
   opacity: 1;
   z-index: 0;
+}
+
+.icon {
+  fill: black;
+  width: 20px;
+  height: 20px;
 }
 
 .invisible {
