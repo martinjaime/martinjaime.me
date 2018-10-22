@@ -31,6 +31,12 @@ module.exports = {
             loader: "postcss-loader"
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: "svg-react-loader",
+        }
       }
     ]
   },
