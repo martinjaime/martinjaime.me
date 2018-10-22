@@ -23,13 +23,20 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true
+              modules: true,
+              localIdentName: '[name]_[local]__[hash:base64:5]',
             }
           },
           {
             loader: "postcss-loader"
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: "svg-react-loader",
+        }
       }
     ]
   },

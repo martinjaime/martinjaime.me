@@ -3,15 +3,35 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .name {
   font-size: 25px;
-  transition: color 1s ease-in-out;
-  color: black;
+  cursor: pointer;
+  margin-bottom: 15px;
+  background-color: white;
 }
 
-.name:hover {
-  cursor: default;
-  color: LightSlateGray;
+.buttons {
+  transition: top 500ms ease-in-out, opacity 500ms ease-in-out;
+  position: relative;
+  display: flex;
+  width: 90px;
+  justify-content: space-between;
+  top: 0;
+  opacity: 1;
+  z-index: 0;
+}
+
+.icon {
+  fill: black;
+  width: 20px;
+  height: 20px;
+}
+
+.invisible {
+  opacity: 0;
+  top: -35px;
+  z-index: -1;
 }
