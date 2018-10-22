@@ -3,14 +3,11 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  position: relative;
   flex-direction: column;
 }
 
 .name {
   font-size: 25px;
-  /* transition: color 1s ease-in-out;
-  color: black; */
   cursor: pointer;
   margin-bottom: 15px;
   background-color: white;
@@ -21,10 +18,11 @@
   position: relative;
   top: 0;
   opacity: 1;
-  z-index: -1;
+  z-index: 0;
 }
 
 .invisible {
   opacity: 0;
   top: -35px;
+  z-index: -1;
 }
