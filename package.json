@@ -47,7 +47,7 @@
     "webpack-dev-server": "^3.1.1"
   },
   "scripts": {
-    "lint-js": "eslint '{,!(node_modules),!(dist)/**/}*.js'",
+    "lint": "eslint '{,!(node_modules),!(dist)/**/}*.js'",
     "fix": "yarn lint-js --fix",
     "test": "echo there are no tests!",
     "start": "webpack-dev-server --mode development",

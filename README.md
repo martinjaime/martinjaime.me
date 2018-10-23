@@ -5,8 +5,9 @@
 
 Notes to remind myself how this thing works.
 
-### Deploy
+### Useful Scripts
 
-```sh
-yarn deploy
-```
+* Run locally: `yarn start`
+* Lint: `yarn lint`
+* Fix lint errors that can be fixed automatically: `yarn fix`
+* Deploy: `yarn deploy`
