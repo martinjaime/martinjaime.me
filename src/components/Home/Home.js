@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './Home.css'
+import styles from './Home.scss'
 import classnames from 'classnames/bind'
 import ContactButton from '../ContactButton/ContactButton'
 
