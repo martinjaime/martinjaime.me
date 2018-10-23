@@ -1,0 +1,19 @@
+extends:
+  - standard
+  - standard-react
+  - prettier
+
+parser: babel-eslint
+
+plugins:
+  - prettier
+
+globals:
+  graphql: false
+
+rules:
+  prettier/prettier:
+    - error
+    - trailingComma: es5
+      singleQuote: true
+      semi: false
