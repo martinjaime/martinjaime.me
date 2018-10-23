@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import classnames from 'classnames/bind'
 import styles from './ContactButton.css'
 import GitHubIcon from './assets/github-icon.svg'
@@ -9,7 +9,7 @@ const cx = classnames.bind(styles)
 
 const ContactButton = ({ type, url, ...otherProps }) => {
   const Icon = props => {
-    switch(type) {
+    switch (type) {
       case 'github':
         return <GitHubIcon {...props} />
       case 'linkedin':
