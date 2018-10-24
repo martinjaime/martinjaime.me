@@ -1,4 +1,6 @@
-var path = require('path')
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const isDev = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: [path.join(__dirname, 'src', 'index.js')],
@@ -6,6 +8,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -14,16 +22,19 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
-          { loader: 'style-loader' },
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]_[local]__[hash:base64:5]',
+              localIdentName: isDev
+                ? '[name]_[local]__[hash:base64:5]'
+                : '[hash:base64:5]',
             },
           },
+          { loader: 'sass-loader' },
           {
             loader: 'postcss-loader',
           },

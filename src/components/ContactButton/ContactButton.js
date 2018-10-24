@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames/bind'
-import styles from './ContactButton.css'
+import styles from './ContactButton.scss'
 import GitHubIcon from './assets/github-icon.svg'
 import LinkedInIcon from './assets/linked-in-icon.svg'
 import EnvelopeIcon from './assets/envelope-icon.svg'
