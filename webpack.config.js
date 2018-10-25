@@ -22,7 +22,12 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
         test: /\.scss$/,
+        exclude: /node_modules/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
