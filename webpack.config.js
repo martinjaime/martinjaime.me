@@ -39,7 +39,12 @@ module.exports = {
                 : '[hash]',
             },
           },
-          { loader: 'sass-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./src/helpers'],
+            },
+          },
           {
             loader: 'postcss-loader',
           },
