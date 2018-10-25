@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Home.scss'
 import classnames from 'classnames/bind'
+import { notify } from '../../helpers/toast'
 import ContactButton from '../ContactButton/ContactButton'
 
 const cx = classnames.bind(styles)
@@ -16,6 +17,10 @@ export default class Home extends Component {
 
   onClick = () => this.setState({ clicked: !this.state.clicked })
 
+  notifyComingSoon = () => {
+    notify('Coming soon!')
+  }
+
   render() {
     return (
       <div className={cx('root')}>
@@ -28,7 +33,7 @@ export default class Home extends Component {
             type="linkedin"
             url="https://www.linkedin.com/in/mrtnjaime/"
           />
-          <ContactButton type="mail" />
+          <ContactButton onClick={this.notifyComingSoon} type="mail" />
         </div>
       </div>
     )
