@@ -31,7 +31,7 @@ module.exports = {
               modules: true,
               localIdentName: isDev
                 ? '[name]_[local]__[hash:base64:5]'
-                : '[hash:base64:5]',
+                : '[hash]',
             },
           },
           { loader: 'sass-loader' },
