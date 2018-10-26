@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import classnames from 'classnames/bind'
@@ -21,12 +21,12 @@ export default class App extends Component {
           draggablePercent={45}
           hideProgressBar
         />
-        <BrowserRouter basename={`${process.env.PUBLIC_URL || ''}/`}>
+        <Router>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route component={PageNotFound} />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     )
   }
