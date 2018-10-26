@@ -5,9 +5,12 @@
 
 Notes to remind myself how this thing works.
 
+This website is built with [React](https://reactjs.org/) and [SCSS](https://sass-lang.com/). The master branch is automatically deployed to github pages by the CI service with [gh-pages](https://github.com/tschaub/gh-pages).
+
+
 ### Useful Scripts
 
-* Run locally: `yarn start`
-* Lint: `yarn lint`
-* Fix lint errors that can be fixed automatically: `yarn fix`
-* Deploy: `yarn deploy`
+* `yarn start`: Run locally
+* `yarn lint`: Lint
+* `yarn fix`: Fix lint errors that can be fixed automatically
+* `yarn deploy`: Deploy
