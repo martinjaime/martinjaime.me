@@ -42,7 +42,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./src/helpers'],
+              includePaths: ['./src/helpers/global-styles'],
             },
           },
           {
