@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import classnames from 'classnames/bind'
 import styles from './ContactButton.scss'
@@ -24,6 +25,11 @@ const ContactButton = ({ type, url, ...otherProps }) => {
       <Icon className={cx('icon')} {...otherProps} />
     </a>
   )
+}
+
+ContactButton.propTypes = {
+  type: PropTypes.string,
+  url: PropTypes.string,
 }
 
 export default ContactButton
