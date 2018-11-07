@@ -1,3 +1,5 @@
+@import 'global';
+
 .root {
   display: flex;
   height: 100vh;
@@ -6,12 +8,50 @@
   flex-direction: column;
 }
 
+.name-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
 .name {
   font-size: 25px;
   cursor: pointer;
   margin-bottom: 15px;
   background-color: white;
   -webkit-tap-highlight-color: transparent;
+}
+
+.name:after {
+  animation: underline 1s ease 2s 1;
+  background: $teal;
+  border-radius: 5px;
+  content: '';
+  display: block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+@keyframes underline {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  25% {
+    left: 0;
+    width: 100%;
+  }
+  26% {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  75% {
+    left: unset;
+    right: 0;
+    width: 0;
+  }
 }
 
 .buttons {

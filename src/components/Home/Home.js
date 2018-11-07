@@ -24,9 +24,11 @@ export default class Home extends Component {
   render() {
     return (
       <div className={cx('root')}>
-        <p onClick={this.onClick} className={cx('name')}>
-          martin jaime
-        </p>
+        <div className={cx('name-wrapper')}>
+          <p onClick={this.onClick} className={cx('name')}>
+            martin jaime
+          </p>
+        </div>
         <div className={cx('buttons', { invisible: !this.state.clicked })}>
           <ContactButton type="github" url="https://github.com/martinjaime" />
           <ContactButton
