@@ -11,11 +11,15 @@ export default class Home extends Component {
     super(props)
 
     this.state = {
-      clicked: false,
+      open: false,
     }
   }
 
-  onClick = () => this.setState({ clicked: !this.state.clicked })
+  componentDidMount() {
+    setTimeout(() => this.setState({ open: true }), 7000)
+  }
+
+  onClick = () => this.setState({ open: !this.state.open })
 
   notifyComingSoon = () => {
     notify('Coming soon!')
@@ -29,7 +33,7 @@ export default class Home extends Component {
             martin jaime
           </p>
         </div>
-        <div className={cx('buttons', { invisible: !this.state.clicked })}>
+        <div className={cx('buttons', { invisible: !this.state.open })}>
           <ContactButton type="github" url="https://github.com/martinjaime" />
           <ContactButton
             type="linkedin"
