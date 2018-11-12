@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styles from './Home.scss'
 import classnames from 'classnames/bind'
 import { notify } from '../../helpers/toast'
@@ -17,9 +18,21 @@ export default class Home extends Component {
 
   componentDidMount() {
     setTimeout(() => this.setState({ open: true }), 7000)
+    window.addEventListener('scroll', this.onScroll)
   }
 
   onClick = () => this.setState({ open: !this.state.open })
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
+  }
+
+  onScroll = () => {
+    window.removeEventListener('scroll', this.onScroll)
+    this.props.history.push('/nav-menu')
+  }
+
+  onClick = () => this.setState({ clicked: !this.state.clicked })
 
   notifyComingSoon = () => {
     notify('Coming soon!')
@@ -44,4 +57,10 @@ export default class Home extends Component {
       </div>
     )
   }
+}
+
+Home.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 }

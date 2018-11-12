@@ -7,6 +7,7 @@ import styles from './App.scss'
 
 // Pages
 import Home from './components/Home/Home'
+import NavMenu from './components/NavMenu/NavMenu'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 
 const cx = classnames.bind(styles)
@@ -24,6 +25,7 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/nav-menu" component={NavMenu} />
             <Route component={PageNotFound} />
           </Switch>
         </Router>
