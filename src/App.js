@@ -19,7 +19,7 @@ export default class App extends Component {
         <ToastContainer
           closeButton={false}
           toastClassName={cx('toaster')}
-          draggablePercent={45}
+          draggablePercent={30}
           hideProgressBar
         />
         <Router>
