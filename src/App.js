@@ -7,6 +7,7 @@ import styles from './App.scss'
 
 // Pages
 import Home from './components/Home/Home'
+import NavPage from './components/NavPage/NavPage'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 
 const cx = classnames.bind(styles)
@@ -18,12 +19,13 @@ export default class App extends Component {
         <ToastContainer
           closeButton={false}
           toastClassName={cx('toaster')}
-          draggablePercent={45}
+          draggablePercent={30}
           hideProgressBar
         />
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/nav-menu" component={NavPage} />
             <Route component={PageNotFound} />
           </Switch>
         </Router>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styles from './Home.scss'
 import classnames from 'classnames/bind'
-import { notify } from '../../helpers/toast'
+import { notifyComingSoon } from '../../helpers/toast'
 import ContactButton from '../ContactButton/ContactButton'
 
 const cx = classnames.bind(styles)
@@ -17,13 +18,21 @@ export default class Home extends Component {
 
   componentDidMount() {
     setTimeout(() => this.setState({ open: true }), 7000)
+    window.addEventListener('scroll', this.onScroll)
   }
 
   onClick = () => this.setState({ open: !this.state.open })
 
-  notifyComingSoon = () => {
-    notify('Coming soon!')
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
   }
+
+  onScroll = () => {
+    window.removeEventListener('scroll', this.onScroll)
+    this.props.history.push('/nav-menu')
+  }
+
+  onClick = () => this.setState({ open: !this.state.open })
 
   render() {
     return (
@@ -39,9 +48,15 @@ export default class Home extends Component {
             type="linkedin"
             url="https://www.linkedin.com/in/mrtnjaime/"
           />
-          <ContactButton onClick={this.notifyComingSoon} type="mail" />
+          <ContactButton onClick={notifyComingSoon} type="mail" />
         </div>
       </div>
     )
   }
+}
+
+Home.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 }
