@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Home.scss'
 import classnames from 'classnames/bind'
-import { notify } from '../../helpers/toast'
+import { notifyComingSoon } from '../../helpers/toast'
 import ContactButton from '../ContactButton/ContactButton'
 
 const cx = classnames.bind(styles)
@@ -34,10 +34,6 @@ export default class Home extends Component {
 
   onClick = () => this.setState({ open: !this.state.open })
 
-  notifyComingSoon = () => {
-    notify('Coming soon!')
-  }
-
   render() {
     return (
       <div className={cx('root')}>
@@ -52,7 +48,7 @@ export default class Home extends Component {
             type="linkedin"
             url="https://www.linkedin.com/in/mrtnjaime/"
           />
-          <ContactButton onClick={this.notifyComingSoon} type="mail" />
+          <ContactButton onClick={notifyComingSoon} type="mail" />
         </div>
       </div>
     )

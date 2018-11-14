@@ -7,3 +7,7 @@ export const notify = message => {
 
   return toast(message, { toastId: message })
 }
+
+export const notifyComingSoon = () => {
+  notify('Coming soon!')
+}
