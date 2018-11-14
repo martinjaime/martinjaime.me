@@ -32,7 +32,7 @@ export default class Home extends Component {
     this.props.history.push('/nav-menu')
   }
 
-  onClick = () => this.setState({ clicked: !this.state.clicked })
+  onClick = () => this.setState({ open: !this.state.open })
 
   notifyComingSoon = () => {
     notify('Coming soon!')
