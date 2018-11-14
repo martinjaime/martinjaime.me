@@ -107,6 +107,28 @@ body {
   width: 20px;
   height: 20px; }
 
+._28a972d8724736fb09903af3b94cadca {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+._89ade27f05cf42bcc51f863fc2b014c6 {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center; }
+
+._35286abe06b6c77f49fccae64915edeb {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5625rem;
+  text-align: left; }
+  ._35286abe06b6c77f49fccae64915edeb > div {
+    cursor: pointer;
+    padding-bottom: 5px; }
+
 ._7b5c165c5bdd8383e0e8f62243f7f64c {
   display: flex;
   height: 100vh;
