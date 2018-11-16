@@ -32,8 +32,6 @@ export default class Home extends Component {
     this.props.history.push('/nav-menu')
   }
 
-  onClick = () => this.setState({ open: !this.state.open })
-
   render() {
     return (
       <div className={cx('root')}>
