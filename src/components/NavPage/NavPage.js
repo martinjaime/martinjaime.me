@@ -8,7 +8,7 @@ const menuItems = [
   { label: 'about', onClick: notifyComingSoon },
   { label: 'blog', onClick: notifyComingSoon },
   { label: 'personal', onClick: notifyComingSoon },
-  { label: 'evan', onClick: notifyComingSoon },
+  { label: 'evan', onClick: },
 ]
 
 const NavPage = () => (
