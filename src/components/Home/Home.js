@@ -45,6 +45,8 @@ export default class Home extends Component {
           <p onClick={this.onClick} className={cx('name')}>
             martin jaime
           </p>
+          <p>evan longwood
+          </p>
         </div>
         <div className={cx('buttons', { invisible: !this.state.open })}>
           <ContactButton type="github" url="https://github.com/martinjaime" />
