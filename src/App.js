@@ -9,6 +9,7 @@ import styles from './App.scss'
 import Home from './components/Home/Home'
 import NavPage from './components/NavPage/NavPage'
 import PageNotFound from './components/PageNotFound/PageNotFound'
+import Evan from './components/Evan/Evan'
 
 const cx = classnames.bind(styles)
 
@@ -26,6 +27,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/nav-menu" component={NavPage} />
+            <Route path="/evan" component={Evan} />
             <Route component={PageNotFound} />
           </Switch>
         </Router>
