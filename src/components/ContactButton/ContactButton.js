@@ -5,6 +5,7 @@ import styles from './ContactButton.scss'
 import GitHubIcon from './assets/github-icon.svg'
 import LinkedInIcon from './assets/linked-in-icon.svg'
 import EnvelopeIcon from './assets/envelope-icon.svg'
+import PassengerIcon from './assets/passenger.svg'
 
 const cx = classnames.bind(styles)
 
@@ -15,6 +16,8 @@ const ContactButton = ({ type, url, ...otherProps }) => {
         return <GitHubIcon {...props} />
       case 'linkedin':
         return <LinkedInIcon {...props} />
+      case 'navpage':
+        return <PassengerIcon {...props} />
       default:
         return <EnvelopeIcon {...props} />
     }
