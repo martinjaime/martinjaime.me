@@ -49,6 +49,11 @@ export default class Home extends Component {
             url="https://www.linkedin.com/in/mrtnjaime/"
           />
           <ContactButton onClick={notifyComingSoon} type="mail" />
+          <ContactButton
+            onClick={notifyComingSoon}
+            type="navpage"
+            url="/nav-menu"
+          />
         </div>
       </div>
     )
