@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { FC, HTMLAttributes } from 'react'
 import classnames from 'classnames/bind'
-import styles from './ContactButton.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styles from './ContactButton.scss'
 
 const cx = classnames.bind(styles)
 
@@ -10,7 +9,16 @@ const FaIcon = ({ icon }) => (
   <FontAwesomeIcon icon={icon} color="black" size="lg" />
 )
 
-const ContactButton = ({ type, url, ...otherProps }) => {
+interface ContactButtonProps {
+  type: string
+  url?: string
+}
+
+const ContactButton: FC<ContactButtonProps & HTMLAttributes<HTMLAnchorElement>> = ({
+  type,
+  url,
+  ...otherProps
+}) => {
   const Icon = props => {
     switch (type) {
       case 'github':
@@ -27,11 +35,6 @@ const ContactButton = ({ type, url, ...otherProps }) => {
       <Icon className={cx('icon')} {...otherProps} />
     </a>
   )
-}
-
-ContactButton.propTypes = {
-  type: PropTypes.string,
-  url: PropTypes.string,
 }
 
 export default ContactButton
