@@ -1,3 +1,5 @@
 /node_modules/
 dist/bundle.js
 dist/main.css
+dist/main.css
+dist/*.map

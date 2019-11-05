@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: [path.join(__dirname, 'src', 'index.js')],
+  entry: [path.join(__dirname, 'src', 'index.tsx')],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -17,9 +17,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'awesome-typescript-loader',
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       },
       {
         test: /\.css$/,
@@ -58,6 +63,7 @@ module.exports = {
       },
     ],
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
