@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { History } from 'history'
 import styles from './Home.scss'
 import classnames from 'classnames/bind'
 import { notifyComingSoon } from '../../helpers/toast'
@@ -7,7 +7,15 @@ import ContactButton from '../ContactButton/ContactButton'
 
 const cx = classnames.bind(styles)
 
-export default class Home extends Component {
+interface HomeProps {
+  history: History
+}
+
+interface HomeState {
+  open: boolean
+}
+
+export default class Home extends Component<HomeProps, HomeState> {
   constructor(props) {
     super(props)
 
@@ -32,8 +40,6 @@ export default class Home extends Component {
     this.props.history.push('/nav-menu')
   }
 
-  onClick = () => this.setState({ open: !this.state.open })
-
   render() {
     return (
       <div className={cx('root')}>
@@ -53,10 +59,4 @@ export default class Home extends Component {
       </div>
     )
   }
-}
-
-Home.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
 }
