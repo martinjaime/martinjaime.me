@@ -14,6 +14,9 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss'],
+  },
   module: {
     rules: [
       {
@@ -35,6 +38,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          // { loader: 'css-modules-typescript-loader' },
           {
             loader: 'css-loader',
             options: {
