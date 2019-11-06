@@ -24,7 +24,7 @@ class Evan extends Component {
     const { tasks } = this.state
 
     return (
-      <div className="container">
+      <div className="container" >
         <Table taskData={tasks} removeTask={this.removeTask} />
         <Form handleSubmit={this.handleSubmit} />
       </div>

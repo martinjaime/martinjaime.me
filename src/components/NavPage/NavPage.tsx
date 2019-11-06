@@ -1,12 +1,16 @@
-import React from 'react'
-import styles from './NavPage.scss'
+import React, { FC } from 'react'
+import { History } from 'history'
 import classnames from 'classnames/bind'
 import { notifyComingSoon } from '../../helpers/toast'
-import PropTypes from 'prop-types'
+import styles from './NavPage.scss'
 
 const cx = classnames.bind(styles)
 
-const NavPage = ({ history }) => {
+interface NavPageProps {
+  history: History
+}
+
+const NavPage: FC<NavPageProps> = ({ history }) => {
   const menuItems = [
     { label: 'about', onClick: notifyComingSoon },
     { label: 'blog', onClick: notifyComingSoon },
@@ -25,12 +29,6 @@ const NavPage = ({ history }) => {
       </div>
     </div>
   )
-}
-
-NavPage.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
 }
 
 export default NavPage
