@@ -1,10 +1,10 @@
+import classnames from 'classnames/bind'
 import React from 'react'
 import styles from './PageNotFound.scss'
-import classnames from 'classnames/bind'
 
 const cx = classnames.bind(styles)
 
-const PageNotFound = () => (
+const PageNotFound: React.FC = () => (
   <div className={cx('center-content')}>
     <h1>Page Not Found</h1>
     <p>Are you sure this is the page you were looking for?</p>

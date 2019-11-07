@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify'
+import { toast, ToastId } from 'react-toastify'
 
-export const notify = message => {
+export const notify = (message: ToastId) => {
   if (toast.isActive(message)) {
     return message
   }
