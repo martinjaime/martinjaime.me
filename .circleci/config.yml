@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 executors:
   setup:
@@ -52,7 +52,7 @@ jobs:
           command: yarn deploy
 
 workflows:
-  version: 2
+  version: 2.1
   build-and-deploy:
     jobs:
       - build
