@@ -13,6 +13,11 @@ body {
   border-right: 3px solid #10B5AA;
   color: #5d5d5d; }
 
+._2ce63be2d506df64d5c2ca452f63ddb8 {
+  fill: black;
+  width: 20px;
+  height: 20px; }
+
 .a6f0f4e33fda825787643c65f8013fb5 {
   display: flex;
   height: 100vh;
@@ -102,11 +107,6 @@ body {
   top: -35px;
   z-index: -1; }
 
-._2ce63be2d506df64d5c2ca452f63ddb8 {
-  fill: black;
-  width: 20px;
-  height: 20px; }
-
 ._4b1eca32ad9002273e96267119ba51d4 {
   display: flex;
   height: 100vh;
@@ -136,3 +136,5 @@ body {
   align-items: center;
   flex-direction: column; }
 
+
+/*# sourceMappingURL=main.css.map*/
