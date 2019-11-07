@@ -1,4 +1,13 @@
 version: 2
+
+executors:
+  setup:
+    docker:
+      - image: circleci/node:8.10
+
+    working_directory: ~/martinjai.me
+
+
 jobs:
   build:
     docker:
