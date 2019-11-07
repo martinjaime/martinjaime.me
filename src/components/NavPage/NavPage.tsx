@@ -1,26 +1,26 @@
-import React, { FC } from 'react'
-import { History } from 'history'
-import classnames from 'classnames/bind'
-import { notifyComingSoon } from '../../helpers/toast'
-import styles from './NavPage.scss'
+import classnames from "classnames/bind";
+import { History } from "history";
+import React, { FC } from "react";
+import { notifyComingSoon } from "../../helpers/toast";
+import styles from "./NavPage.scss";
 
-const cx = classnames.bind(styles)
+const cx = classnames.bind(styles);
 
-interface NavPageProps {
-  history: History
+interface INavPageProps {
+  history: History;
 }
 
-const NavPage: FC<NavPageProps> = ({ history }) => {
+const NavPage: FC<INavPageProps> = ({ history }) => {
   const menuItems = [
-    { label: 'about', onClick: notifyComingSoon },
-    { label: 'blog', onClick: notifyComingSoon },
-    { label: 'personal', onClick: notifyComingSoon },
-    { label: 'evan', onClick: () => history.push('/evan') },
-  ]
+    { label: "about", onClick: notifyComingSoon },
+    { label: "blog", onClick: notifyComingSoon },
+    { label: "personal", onClick: notifyComingSoon },
+    { label: "evan", onClick: () => history.push("/evan") }
+  ];
 
   return (
-    <div className={cx('root')}>
-      <div className={cx('nav-menu')}>
+    <div className={cx("root")}>
+      <div className={cx("nav-menu")}>
         {menuItems.map(({ label, onClick }) => (
           <div key={label} onClick={onClick}>
             {label}
@@ -28,7 +28,7 @@ const NavPage: FC<NavPageProps> = ({ history }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavPage
+export default NavPage;

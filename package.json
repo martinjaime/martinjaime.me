@@ -8,8 +8,8 @@
   "author": "Martin Jaime",
   "license": "MIT",
   "scripts": {
-    "lint": "tslint src/**/*.ts{,x}",
-    "fix": "yarn lint --fix",
+    "lint": "tslint -c tslint.json -p . --format stylish && prettier 'src/**/*.ts{,x}' --list-different",
+    "fix": "tslint -c tslint.json -p . --format stylish --fix && prettier 'src/**/*.ts{,x}' --write --list-different",
     "test": "yarn lint",
     "start": "webpack-dev-server --open --mode development",
     "build": "NODE_ENV=production webpack --mode production",
