@@ -1,35 +1,45 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  setup:
     docker:
       - image: circleci/node:8.10
 
     working_directory: ~/martinjai.me
 
+
+jobs:
+  build:
+    executor: setup
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run: yarn
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
+  test:
+    executor: setup
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: yarn
       - run: yarn test
 
   deploy:
-    docker:
-      - image: circleci/node:8.10
-    working_directory: ~/martinjai.me
+    executor: setup
 
     steps:
       - checkout
@@ -42,10 +52,13 @@ jobs:
           command: yarn deploy
 
 workflows:
-  version: 2
+  version: 2.1
   build-and-deploy:
     jobs:
       - build
+      - test:
+          requires:
+            - build
       - deploy:
           requires:
             - build
